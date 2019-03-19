@@ -6,6 +6,8 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @subscription = Subscription.new
+    @lift_total = LiftTotal.new
     @profile = Profile.find(params.fetch("id_to_display"))
 
     render("profile_templates/show.html.erb")

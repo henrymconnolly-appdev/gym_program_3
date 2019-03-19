@@ -33,6 +33,22 @@ class LiftTotalsController < ApplicationController
     end
   end
 
+  def create_row_from_profile
+    @lift_total = LiftTotal.new
+
+    @lift_total.profile_id = params.fetch("profile_id")
+    @lift_total.weight = params.fetch("weight")
+    @lift_total.date = params.fetch("date")
+
+    if @lift_total.valid?
+      @lift_total.save
+
+      redirect_to("/profiles/#{@lift_total.profile_id}", notice: "LiftTotal created successfully.")
+    else
+      render("lift_total_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @lift_total = LiftTotal.find(params.fetch("prefill_with_id"))
 
