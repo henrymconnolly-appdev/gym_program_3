@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_one    :feed,
+             :dependent => :destroy
+
   has_one    :profile,
              :dependent => :destroy
 
