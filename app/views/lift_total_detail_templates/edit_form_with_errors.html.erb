@@ -24,7 +24,7 @@
     </label>
 
     <!-- Input for lift_total_id start -->
-    <input type="text" id="lift_total_id" name="lift_total_id" class="form-control" value="<%= @lift_total_detail.lift_total_id %>">
+    <%= select_tag(:lift_total_id, options_from_collection_for_select(LiftTotal.all, :id, :profile_id, @lift_total_detail.lift_total_id), :class => "form-control") %>
     <!-- Input for lift_total_id end -->
   </div>
   <!-- Label and input for lift_total_id end -->
