@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @feed.subscriptions.each do |subscription| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/subscriptions/<%= subscription.id %>">
           <%= subscription.created_at %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_subscription_from_feed/<%= subscription.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="feed_subscriptions_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "feed_templates/feed_subscriptions_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "feed_templates/feeds_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -50,13 +46,10 @@
 
       <% @feeds.each do |feed| %>
       <tr>
-        <!-- Display feed.id start -->
         <td>
           <%= feed.id %>
         </td>
-        <!-- Display feed.id end -->
 
-        <!-- Display feed.user_id start -->
         <td>
           <% if feed.user.present? %>
             <a href="/users/<%= feed.user.id %>">
@@ -64,19 +57,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display feed.user_id end -->
 
-        <!-- Display feed.created_at start -->
         <td>
           <%= time_ago_in_words(feed.created_at) %> ago
         </td>
-        <!-- Display feed.created_at end -->
 
-        <!-- Display feed.updated_at start -->
         <td>
           <%= time_ago_in_words(feed.updated_at) %> ago
         </td>
-        <!-- Display feed.updated_at end -->
 
         <td>
           <a href="/feeds/<%= feed.id %>">

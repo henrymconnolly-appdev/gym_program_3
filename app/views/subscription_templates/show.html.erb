@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link subscription start -->
       <div class="col">
         <a href="/subscriptions/<%= @subscription.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit subscription
         </a>
       </div>
-      <!-- Edit link subscription end -->
 
-      <!-- Delete link subscription start -->
       <div class="col">
         <a href="/delete_subscription/<%= @subscription.id %>" class="btn btn-block btn-outline-secondary">
           Delete subscription
         </a>
       </div>
-      <!-- Delete link subscription end -->
     </div>
 
     <dl>
       <dt>
         Feed
       </dt>
-      <!-- Display feed_id start -->
       <dd>
         <% if @subscription.feed.present? %>
           <a href="/feeds/<%= @subscription.feed_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display feed_id end -->
 
       <dt>
         Profile
       </dt>
-      <!-- Display profile_id start -->
       <dd>
         <% if @subscription.profile.present? %>
           <a href="/profiles/<%= @subscription.profile_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display profile_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@subscription.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@subscription.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

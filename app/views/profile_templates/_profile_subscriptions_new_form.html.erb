@@ -1,23 +1,14 @@
-<!-- Form subscription start -->
 <form action="/create_subscription_from_profile" method="post">
-<!-- Form subscription end -->
 
-  <!-- Label and input for feed_id start -->
   <div class="form-group">
     <label for="feed_id">
       Feed
     </label>
 
-    <!-- Input for feed_id start -->
     <%= select_tag(:feed_id, options_from_collection_for_select(Feed.all, :id, :user_id, @subscription.feed_id), :class => "form-control") %>
-    <!-- Input for feed_id end -->
   </div>
-  <!-- Label and input for feed_id end -->
 
-  <!-- Label and input for profile_id start -->
-  <!-- Input for profile_id start -->
   <input type="hidden" name="profile_id" value="<%= @profile.id %>">
-  <!-- Input for profile_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create subscription

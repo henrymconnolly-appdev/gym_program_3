@@ -5,57 +5,39 @@
 
 <hr>
 
-<!-- Form lift_total_detail start -->
 <form action="/create_lift_total_detail" method="post">
-<!-- Form lift_total_detail end -->
 
-  <!-- Label and input for lift_total_id start -->
   <div class="form-group">
     <label for="lift_total_id">
       Lift total
     </label>
 
-    <!-- Input for lift_total_id start -->
     <%= select_tag(:lift_total_id, options_from_collection_for_select(LiftTotal.all, :id, :profile_id, @lift_total_detail.lift_total_id), :class => "form-control") %>
-    <!-- Input for lift_total_id end -->
   </div>
-  <!-- Label and input for lift_total_id end -->
 
-  <!-- Label and input for squat start -->
   <div class="form-group">
     <label for="squat">
       Squat
     </label>
 
-    <!-- Input for squat start -->
     <input type="text" id="squat" name="squat" class="form-control">
-    <!-- Input for squat end -->
   </div>
-  <!-- Label and input for squat end -->
 
-  <!-- Label and input for bench start -->
   <div class="form-group">
     <label for="bench">
       Bench
     </label>
 
-    <!-- Input for bench start -->
     <input type="text" id="bench" name="bench" class="form-control">
-    <!-- Input for bench end -->
   </div>
-  <!-- Label and input for bench end -->
 
-  <!-- Label and input for deadlift start -->
   <div class="form-group">
     <label for="deadlift">
       Deadlift
     </label>
 
-    <!-- Input for deadlift start -->
     <input type="text" id="deadlift" name="deadlift" class="form-control">
-    <!-- Input for deadlift end -->
   </div>
-  <!-- Label and input for deadlift end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create lift total detail
