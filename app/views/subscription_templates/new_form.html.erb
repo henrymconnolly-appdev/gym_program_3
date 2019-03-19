@@ -16,7 +16,7 @@
     </label>
 
     <!-- Input for feed_id start -->
-    <input type="text" id="feed_id" name="feed_id" class="form-control">
+    <%= select_tag(:feed_id, options_from_collection_for_select(Feed.all, :id, :user_id, @subscription.feed_id), :class => "form-control") %>
     <!-- Input for feed_id end -->
   </div>
   <!-- Label and input for feed_id end -->
