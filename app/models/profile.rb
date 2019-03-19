@@ -1,6 +1,9 @@
 class Profile < ApplicationRecord
   # Direct associations
 
+  has_many   :subscriptions,
+             :dependent => :destroy
+
   has_many   :lift_totals,
              :dependent => :destroy
 
