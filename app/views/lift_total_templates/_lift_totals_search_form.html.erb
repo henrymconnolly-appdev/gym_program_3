@@ -1,0 +1,186 @@
+<%= search_form_for @q, :class => collapse_search_form, :id => "lift_totals_filters" do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :date, "Date" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='dategteqPicker' data-target-input="nearest">
+          <%= f.text_field :date_gteq, :class => "form-control datetimepicker-input", :placeholder => "Date greater than or equal to", :data => {:target => '#dategteqPicker'} %>
+          <div class="input-group-append" data-target='#dategteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='datelteqPicker' data-target-input="nearest">
+          <%= f.text_field :date_lteq, :class => "form-control datetimepicker-input", :placeholder => "Date less than or equal to", :data => {:target => '#datelteqPicker'} %>
+          <div class="input-group-append" data-target='#datelteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#dategteqPicker').datetimepicker({
+              format: 'MM/DD/YYYY'
+          });
+          $('#datelteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'MM/DD/YYYY'
+          });
+          $('#dategteqPicker').on("dp.change", function (e) {
+              $('#datelteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#datelteqPicker').on("dp.change", function (e) {
+              $('#dategteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+  <div class="form-group">
+    <%= f.label :weight, "Weight" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :weight_gteq, :class => "form-control", :placeholder => "Weight greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :weight_lteq, :class => "form-control", :placeholder => "Weight less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='created_atgteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Created at greater than or equal to", :data => {:target => '#created_atgteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='created_atlteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Created at less than or equal to", :data => {:target => '#created_atlteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#created_atgteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atlteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atgteqPicker').on("dp.change", function (e) {
+              $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#created_atlteqPicker').on("dp.change", function (e) {
+              $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+  <div class="form-group">
+    <%= f.label :created_at, "LiftTotalDetail Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='lift_total_detailgteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :lift_total_detail_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "LiftTotalDetail Created at greater than or equal to", :data => {:target => '#lift_total_detailgteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#lift_total_detailgteqcreated_atPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='lift_total_detaillteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :lift_total_detail_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "LiftTotalDetail Created at less than or equal to", :data => {:target => '#lift_total_detaillteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#lift_total_detaillteqcreated_atPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#lift_total_detailgteqcreated_atPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#lift_total_detaillteqcreated_atPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#lift_total_detailgteqcreated_atPicker').on("dp.change", function (e) {
+              $('#lift_total_detaillteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#lift_total_detaillteqcreated_atPicker').on("dp.change", function (e) {
+              $('#lift_total_detailgteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Subscription Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='subscriptiongteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :subscription_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Subscription Created at greater than or equal to", :data => {:target => '#subscriptiongteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#subscriptiongteqcreated_atPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='subscriptionlteqcreated_atPicker' data-target-input="nearest">
+          <%= f.text_field :subscription_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Subscription Created at less than or equal to", :data => {:target => '#subscriptionlteqcreated_atPicker'} %>
+          <div class="input-group-append" data-target='#subscriptionlteqcreated_atPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#subscriptiongteqcreated_atPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#subscriptionlteqcreated_atPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#subscriptiongteqcreated_atPicker').on("dp.change", function (e) {
+              $('#subscriptionlteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#subscriptionlteqcreated_atPicker').on("dp.change", function (e) {
+              $('#subscriptiongteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+  <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+  <a href="/lift_totals" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+
+<% end %>
+
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#lift_totals_filters">
+  Show filters
+</a>

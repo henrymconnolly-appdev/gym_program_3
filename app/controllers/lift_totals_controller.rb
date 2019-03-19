@@ -1,6 +1,7 @@
 class LiftTotalsController < ApplicationController
   def index
-    @lift_totals = LiftTotal.page(params[:page]).per(10)
+    @q = LiftTotal.ransack(params[:q])
+    @lift_totals = @q.result(:distinct => true).includes(:profile, :lift_total_detail, :subscription).page(params[:page]).per(10)
 
     render("lift_total_templates/index.html.erb")
   end

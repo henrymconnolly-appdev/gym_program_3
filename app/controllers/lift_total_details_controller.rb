@@ -1,6 +1,7 @@
 class LiftTotalDetailsController < ApplicationController
   def index
-    @lift_total_details = LiftTotalDetail.page(params[:page]).per(10)
+    @q = LiftTotalDetail.ransack(params[:q])
+    @lift_total_details = @q.result(:distinct => true).includes(:lift_total).page(params[:page]).per(10)
 
     render("lift_total_detail_templates/index.html.erb")
   end

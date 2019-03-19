@@ -1,6 +1,7 @@
 class SubscriptionsController < ApplicationController
   def index
-    @subscriptions = Subscription.page(params[:page]).per(10)
+    @q = Subscription.ransack(params[:q])
+    @subscriptions = @q.result(:distinct => true).includes(:profile, :feed, :lift_total).page(params[:page]).per(10)
 
     render("subscription_templates/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class FeedsController < ApplicationController
   def index
-    @feeds = Feed.page(params[:page]).per(10)
+    @q = Feed.ransack(params[:q])
+    @feeds = @q.result(:distinct => true).includes(:user, :subscriptions).page(params[:page]).per(10)
 
     render("feed_templates/index.html.erb")
   end
