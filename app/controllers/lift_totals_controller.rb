@@ -1,6 +1,6 @@
 class LiftTotalsController < ApplicationController
   def index
-    @lift_totals = LiftTotal.all
+    @lift_totals = LiftTotal.page(params[:page]).per(10)
 
     render("lift_total_templates/index.html.erb")
   end

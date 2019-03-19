@@ -1,6 +1,6 @@
 class SubscriptionsController < ApplicationController
   def index
-    @subscriptions = Subscription.all
+    @subscriptions = Subscription.page(params[:page]).per(10)
 
     render("subscription_templates/index.html.erb")
   end

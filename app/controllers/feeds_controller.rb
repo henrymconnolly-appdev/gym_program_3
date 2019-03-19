@@ -1,6 +1,6 @@
 class FeedsController < ApplicationController
   def index
-    @feeds = Feed.all
+    @feeds = Feed.page(params[:page]).per(10)
 
     render("feed_templates/index.html.erb")
   end
