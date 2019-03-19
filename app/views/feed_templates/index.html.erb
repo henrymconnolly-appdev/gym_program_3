@@ -54,7 +54,11 @@
 
         <!-- Display feed.user_id start -->
         <td>
-          <%= feed.user.email %>
+          <% if feed.user.present? %>
+            <a href="/users/<%= feed.user.id %>">
+              <%= feed.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display feed.user_id end -->
 

@@ -34,7 +34,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @feed.user_id %>
+        <% if @feed.user.present? %>
+          <a href="/users/<%= @feed.user_id %>">
+            <%= @feed.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

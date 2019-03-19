@@ -34,7 +34,11 @@
       </dt>
       <!-- Display profile_id start -->
       <dd>
-        <%= @lift_total.profile_id %>
+        <% if @lift_total.profile.present? %>
+          <a href="/profiles/<%= @lift_total.profile_id %>">
+            <%= @lift_total.profile.user_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display profile_id end -->
 

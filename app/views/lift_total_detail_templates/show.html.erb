@@ -34,7 +34,11 @@
       </dt>
       <!-- Display lift_total_id start -->
       <dd>
-        <%= @lift_total_detail.lift_total_id %>
+        <% if @lift_total_detail.lift_total.present? %>
+          <a href="/lift_totals/<%= @lift_total_detail.lift_total_id %>">
+            <%= @lift_total_detail.lift_total.profile_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display lift_total_id end -->
 

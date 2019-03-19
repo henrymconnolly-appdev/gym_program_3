@@ -66,7 +66,11 @@
 
         <!-- Display lift_total_detail.lift_total_id start -->
         <td>
-          <%= lift_total_detail.lift_total.profile_id %>
+          <% if lift_total_detail.lift_total.present? %>
+            <a href="/lift_totals/<%= lift_total_detail.lift_total.id %>">
+              <%= lift_total_detail.lift_total.profile_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display lift_total_detail.lift_total_id end -->
 

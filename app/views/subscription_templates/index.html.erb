@@ -58,13 +58,21 @@
 
         <!-- Display subscription.feed_id start -->
         <td>
-          <%= subscription.feed.user_id %>
+          <% if subscription.feed.present? %>
+            <a href="/feeds/<%= subscription.feed.id %>">
+              <%= subscription.feed.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display subscription.feed_id end -->
 
         <!-- Display subscription.profile_id start -->
         <td>
-          <%= subscription.profile.user_id %>
+          <% if subscription.profile.present? %>
+            <a href="/profiles/<%= subscription.profile.id %>">
+              <%= subscription.profile.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display subscription.profile_id end -->
 

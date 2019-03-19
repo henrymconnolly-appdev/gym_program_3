@@ -62,7 +62,11 @@
 
         <!-- Display lift_total.profile_id start -->
         <td>
-          <%= lift_total.profile.user_id %>
+          <% if lift_total.profile.present? %>
+            <a href="/profiles/<%= lift_total.profile.id %>">
+              <%= lift_total.profile.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display lift_total.profile_id end -->
 
