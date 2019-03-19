@@ -42,7 +42,7 @@ class ProfilesController < ApplicationController
   def update_row
     @profile = Profile.find(params.fetch("id_to_modify"))
 
-    @profile.user_id = params.fetch("user_id")
+    
 
     if @profile.valid?
       @profile.save
