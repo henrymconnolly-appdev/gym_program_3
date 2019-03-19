@@ -55,6 +55,14 @@ class LiftTotalsController < ApplicationController
     end
   end
 
+  def destroy_row_from_profile
+    @lift_total = LiftTotal.find(params.fetch("id_to_remove"))
+
+    @lift_total.destroy
+
+    redirect_to("/profiles/#{@lift_total.profile_id}", notice: "LiftTotal deleted successfully.")
+  end
+
   def destroy_row
     @lift_total = LiftTotal.find(params.fetch("id_to_remove"))
 

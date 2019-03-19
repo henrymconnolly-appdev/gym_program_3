@@ -53,6 +53,22 @@ class SubscriptionsController < ApplicationController
     end
   end
 
+  def destroy_row_from_profile
+    @subscription = Subscription.find(params.fetch("id_to_remove"))
+
+    @subscription.destroy
+
+    redirect_to("/profiles/#{@subscription.profile_id}", notice: "Subscription deleted successfully.")
+  end
+
+  def destroy_row_from_feed
+    @subscription = Subscription.find(params.fetch("id_to_remove"))
+
+    @subscription.destroy
+
+    redirect_to("/feeds/#{@subscription.feed_id}", notice: "Subscription deleted successfully.")
+  end
+
   def destroy_row
     @subscription = Subscription.find(params.fetch("id_to_remove"))
 

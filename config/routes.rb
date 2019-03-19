@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_subscription/:id_to_remove", { :controller => "subscriptions", :action => "destroy_row" })
+  get("/delete_subscription_from_feed/:id_to_remove", { :controller => "subscriptions", :action => "destroy_row_from_feed" })
+  get("/delete_subscription_from_profile/:id_to_remove", { :controller => "subscriptions", :action => "destroy_row_from_profile" })
 
   #------------------------------
 
@@ -37,6 +39,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_lift_total/:id_to_remove", { :controller => "lift_totals", :action => "destroy_row" })
+  get("/delete_lift_total_from_profile/:id_to_remove", { :controller => "lift_totals", :action => "destroy_row_from_profile" })
 
   #------------------------------
 
