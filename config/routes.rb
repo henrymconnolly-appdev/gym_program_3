@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Lift total resource:
+
+  # CREATE
+  get("/lift_totals/new", { :controller => "lift_totals", :action => "new_form" })
+  post("/create_lift_total", { :controller => "lift_totals", :action => "create_row" })
+
+  # READ
+  get("/lift_totals", { :controller => "lift_totals", :action => "index" })
+  get("/lift_totals/:id_to_display", { :controller => "lift_totals", :action => "show" })
+
+  # UPDATE
+  get("/lift_totals/:prefill_with_id/edit", { :controller => "lift_totals", :action => "edit_form" })
+  post("/update_lift_total/:id_to_modify", { :controller => "lift_totals", :action => "update_row" })
+
+  # DELETE
+  get("/delete_lift_total/:id_to_remove", { :controller => "lift_totals", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Lift total detail resource:
 
   # CREATE

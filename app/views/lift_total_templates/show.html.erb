@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Lift total #<%= @lift_total.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/lift_totals" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link lift_total start -->
+      <div class="col">
+        <a href="/lift_totals/<%= @lift_total.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit lift total
+        </a>
+      </div>
+      <!-- Edit link lift_total end -->
+
+      <!-- Delete link lift_total start -->
+      <div class="col">
+        <a href="/delete_lift_total/<%= @lift_total.id %>" class="btn btn-block btn-outline-secondary">
+          Delete lift total
+        </a>
+      </div>
+      <!-- Delete link lift_total end -->
+    </div>
+
+    <dl>
+      <dt>
+        Profile
+      </dt>
+      <!-- Display profile_id start -->
+      <dd>
+        <%= @lift_total.profile_id %>
+      </dd>
+      <!-- Display profile_id end -->
+
+      <dt>
+        Weight
+      </dt>
+      <!-- Display weight start -->
+      <dd>
+        <%= @lift_total.weight %>
+      </dd>
+      <!-- Display weight end -->
+
+      <dt>
+        Date
+      </dt>
+      <!-- Display date start -->
+      <dd>
+        <%= @lift_total.date %>
+      </dd>
+      <!-- Display date end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@lift_total.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@lift_total.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
