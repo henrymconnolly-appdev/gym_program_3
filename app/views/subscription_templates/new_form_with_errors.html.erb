@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @subscription.present? %>
+  <% if @subscription.errors.any? %>
+    <% @subscription.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new subscription
+</h1>
+
+
+<hr>
+
+<!-- Form subscription start -->
+<form action="/create_subscription" method="post">
+<!-- Form subscription end -->
+
+  <!-- Label and input for feed_id start -->
+  <div class="form-group">
+    <label for="feed_id">
+      Feed
+    </label>
+
+    <!-- Input for feed_id start -->
+    <input type="text" id="feed_id" name="feed_id" class="form-control" value="<%= @subscription.feed_id %>">
+    <!-- Input for feed_id end -->
+  </div>
+  <!-- Label and input for feed_id end -->
+
+  <!-- Label and input for profile_id start -->
+  <div class="form-group">
+    <label for="profile_id">
+      Profile
+    </label>
+
+    <!-- Input for profile_id start -->
+    <input type="text" id="profile_id" name="profile_id" class="form-control" value="<%= @subscription.profile_id %>">
+    <!-- Input for profile_id end -->
+  </div>
+  <!-- Label and input for profile_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create subscription
+  </button>
+</form>
+
+<hr>
+
+<a href="/subscriptions">
+  Go back
+</a>

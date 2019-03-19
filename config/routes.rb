@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Subscription resource:
+
+  # CREATE
+  get("/subscriptions/new", { :controller => "subscriptions", :action => "new_form" })
+  post("/create_subscription", { :controller => "subscriptions", :action => "create_row" })
+
+  # READ
+  get("/subscriptions", { :controller => "subscriptions", :action => "index" })
+  get("/subscriptions/:id_to_display", { :controller => "subscriptions", :action => "show" })
+
+  # UPDATE
+  get("/subscriptions/:prefill_with_id/edit", { :controller => "subscriptions", :action => "edit_form" })
+  post("/update_subscription/:id_to_modify", { :controller => "subscriptions", :action => "update_row" })
+
+  # DELETE
+  get("/delete_subscription/:id_to_remove", { :controller => "subscriptions", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Lift total resource:
 
   # CREATE
