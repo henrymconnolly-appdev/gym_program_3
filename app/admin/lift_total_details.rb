@@ -1,4 +1,6 @@
 ActiveAdmin.register LiftTotalDetail do
+
+ permit_params :lift_total_id, :squat, :bench, :deadlift
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
