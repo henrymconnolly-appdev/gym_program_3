@@ -10,6 +10,10 @@ class Subscription < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :lift_total,
+             :through => :profile,
+             :source => :lift_totals
+
   # Validations
 
 end

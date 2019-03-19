@@ -9,6 +9,10 @@ class LiftTotal < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :subscription,
+             :through => :profile,
+             :source => :subscriptions
+
   # Validations
 
 end

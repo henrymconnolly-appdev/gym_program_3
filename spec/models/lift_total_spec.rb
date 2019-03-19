@@ -12,6 +12,8 @@ RSpec.describe LiftTotal, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:subscription) }
+
     end
 
     describe "Validations" do
