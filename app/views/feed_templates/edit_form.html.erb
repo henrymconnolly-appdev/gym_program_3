@@ -1,0 +1,32 @@
+<h1>
+  Edit feed #<%= @feed.id %>
+</h1>
+
+<hr>
+
+<!-- Form feed start -->
+<form action="/update_feed/<%= @feed.id %>" method="post">
+<!-- Form feed end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @feed.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update feed
+  </button>
+</form>
+
+<hr>
+
+<a href="/feeds">
+  Go back
+</a>
